@@ -1,0 +1,4 @@
+Horizon,BestDirectMethod,BestDirectMSE,RetrievalMSE
+1,Zero,0.000632,0.000646
+5,Zero,0.001719,0.001759
+20,MLP+Local,0.005634,0.005774
