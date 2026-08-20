@@ -1,8 +1,8 @@
-# Which Histories Matter? Predictive Relevance from Privileged Futures
+# Which Histories Matter for Time Series Forecasting? Learning Predictive Relevance with Future Supervision
 
 Official code and experiments for the paper:
 
-**Which Histories Matter? Predictive Relevance from Privileged Futures**
+**Which Histories Matter for Time Series Forecasting? Learning Predictive Relevance with Future Supervision**
 
 Historical similarity is useful for coarse candidate generation, but it need not be the final criterion for predictive relevance.  
 This repository contains the experiments for learning predictive historical relevance from future information available only during training.
