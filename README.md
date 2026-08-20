@@ -35,3 +35,14 @@ which-histories-matter/
 │   ├── saraf_matched/
 │   └── finance/
 └── results/
+
+## Reproducibility
+
+The `experiments/` directory contains notebooks corresponding to the main
+experiments reported in the paper.
+
+The recommended execution order and the purpose of each notebook are described
+in [`experiments/README.md`](experiments/README.md).
+
+Intermediate caches, checkpoints, and generated files are stored under `_work/`
+and are excluded from version control.
