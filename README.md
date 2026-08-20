@@ -17,6 +17,17 @@ Our framework consists of two stages:
 Future trajectories are used only during training to construct soft relevance targets.  
 At inference time, the reranker uses only past-observable information.
 
+## Reproducibility
+
+The `experiments/` directory contains notebooks corresponding to the main
+experiments reported in the paper.
+
+The recommended execution order and the purpose of each notebook are described
+in [`experiments/README.md`](experiments/README.md).
+
+Intermediate caches, checkpoints, and generated files are stored under `_work/`
+and are excluded from version control.
+
 ## Repository Structure
 
 ```text
@@ -36,13 +47,3 @@ which-histories-matter/
 │   └── finance/
 └── results/
 
-## Reproducibility
-
-The `experiments/` directory contains notebooks corresponding to the main
-experiments reported in the paper.
-
-The recommended execution order and the purpose of each notebook are described
-in [`experiments/README.md`](experiments/README.md).
-
-Intermediate caches, checkpoints, and generated files are stored under `_work/`
-and are excluded from version control.
