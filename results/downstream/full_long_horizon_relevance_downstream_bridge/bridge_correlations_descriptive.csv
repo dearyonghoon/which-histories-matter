@@ -1,0 +1,4 @@
+Level,N,Pearson_Retrieval_vs_Downstream,Spearman_Retrieval_vs_Downstream,Pearson_QuerySpecific_vs_Downstream,Spearman_QuerySpecific_vs_Downstream
+24 dataset-horizon cells,24,0.49214414547939445,0.4038295698267333,0.5569339703709918,0.2750218622095856
+6 dataset means,6,0.5774739938297715,0.3142857142857143,0.6011727390921908,0.2
+
