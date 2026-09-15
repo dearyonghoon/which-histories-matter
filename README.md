@@ -1,50 +1,58 @@
 # Which Histories Matter for Time Series Forecasting? Learning Predictive Relevance with Future Supervision
 
-Official code and experiments for the paper.
+Official code and experiments for the paper:
 
-Historical similarity is useful for coarse candidate generation, but it need not be the final criterion for predictive relevance. This repository contains the RARanker experiments and the downstream evaluation with frozen strong forecasters.
+**Which Histories Matter for Time Series Forecasting? Learning Predictive Relevance with Future Supervision**
+
+Historical similarity is useful for coarse candidate generation, but it need not be the final criterion for predictive relevance.  
+This repository contains the experiments for learning predictive historical relevance from future information available only during training.
 
 ## Overview
 
-1. Coarse candidate generation using past-pattern similarity.
-2. Predictive relevance reranking using a lightweight residual MLP trained with privileged future supervision.
-3. Optional integration of the frozen historical memory with PatchTST, iTransformer, TimeMixer, and Seg-MoE.
+Our framework consists of two stages:
 
-Future trajectories are used only during training to construct soft relevance targets. At inference time, the reranker uses only past-observable information.
+1. **Coarse candidate generation** using past-pattern similarity.
+2. **Predictive relevance reranking** using a lightweight residual MLP trained with privileged future supervision.
+
+Future trajectories are used only during training to construct soft relevance targets.  
+At inference time, the reranker uses only past-observable information.
 
 ## Reproducibility
 
-Start with the dependency-light frozen-result check:
+The `experiments/` directory contains notebooks corresponding to the main
+experiments reported in the paper.
 
-```bash
-python scripts/verify_frozen_results.py
-```
+The recommended execution order and the purpose of each notebook are described
+in [`experiments/README.md`](experiments/README.md).
 
-The final strong-forecaster notebooks are in [`experiments/downstream/`](experiments/downstream/). They preserve the experiment identifiers used for provenance and require the public datasets, official backbone implementations, and substantial GPU compute for a full rerun. Aggregate outputs used by the manuscript are in [`results/downstream/`](results/downstream/).
+The final strong-forecaster experiments are listed separately in
+[`experiments/downstream/README.md`](experiments/downstream/README.md). Only
+the final execution path is retained; exploratory and superseded notebooks are
+excluded from the public release. See [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)
+for frozen-result verification and full-rerun requirements.
 
-See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the fast verification path, full A100 rerun guidance, data requirements, and the result provenance map.
+Intermediate caches, checkpoints, and generated files are stored under `_work/`
+and are excluded from version control.
 
 ## Repository Structure
 
 ```text
 which-histories-matter/
 ├── README.md
-├── REPRODUCIBILITY.md
+├── LICENSE
 ├── requirements.txt
 ├── data/
+│   └── README.md
 ├── experiments/
-│   ├── candidate_pool/
+│   ├── confirmatory/
 │   ├── mechanism/
 │   ├── supervision_ablation/
 │   ├── similarity_robustness/
+│   ├── candidate_pool/
 │   ├── saraf_matched/
 │   ├── finance/
 │   └── downstream/
-├── results/
-│   ├── retrieval/
-│   └── downstream/
-└── scripts/
-    └── verify_frozen_results.py
-```
-
-Intermediate caches, checkpoints, and generated files are intentionally excluded from version control.
+├── scripts/
+│   ├── audit_public_release.py
+│   └── verify_frozen_results.py
+└── results/

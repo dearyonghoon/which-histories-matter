@@ -36,10 +36,22 @@ and per-channel intermediate arrays are omitted from the public snapshot; the
 aggregate files are sufficient to verify the reported condition counts,
 relative gains, and descriptive bridge statistics.
 
+## Public-release audit
+
+Before publishing changes, run:
+
+```bash
+python scripts/audit_public_release.py
+```
+
+This checks tracked text and notebook sources for non-English annotations,
+AI-conversation markers, author-specific paths, saved notebook outputs, and
+invalid notebook JSON. It also confirms that the downstream directory contains
+exactly the 32 final notebooks documented in its notebook map.
+
 ## Data and anonymity
 
 Dataset acquisition instructions are in `data/README.md`. No dataset or
 credential is bundled. During double-blind review, use an anonymized export of
 this repository and do not include author-identifying metadata or public URLs
 in the submission supplementary.
-
