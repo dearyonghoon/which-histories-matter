@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DOWNSTREAM = ROOT / "experiments" / "downstream"
-EXPECTED_DOWNSTREAM_NOTEBOOKS = 32
+EXPECTED_DOWNSTREAM_NOTEBOOKS = 41
 
 FORBIDDEN = {
     "Hangul text": re.compile(r"[\uac00-\ud7a3]"),
@@ -45,6 +45,9 @@ def main() -> int:
         )
 
     for path in tracked_files():
+        # This file necessarily contains the marker patterns it audits.
+        if path.resolve() == Path(__file__).resolve():
+            continue
         try:
             text = path.read_text(encoding="utf-8")
         except (UnicodeDecodeError, IsADirectoryError):
