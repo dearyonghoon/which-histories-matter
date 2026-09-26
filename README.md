@@ -1,58 +1,49 @@
 # Which Histories Matter for Time Series Forecasting? Learning Predictive Relevance with Future Supervision
 
-Official code and experiments for the paper:
+Official code and reproducibility package for the paper **Which Histories Matter for Time Series Forecasting? Learning Predictive Relevance with Future Supervision**.
 
-**Which Histories Matter for Time Series Forecasting? Learning Predictive Relevance with Future Supervision**
+The current release centers on **Predictive Relevance Retrieval (PRR)**. PRR learns historical relevance from future supervision available only during training, while inference uses only past-observable information. **PRR-B100** is an inference-only candidate-budget control using the same frozen full-PRR checkpoint, and **PRR-Stat** is the fixed-Pearson-support ablation.
 
-Historical similarity is useful for coarse candidate generation, but it need not be the final criterion for predictive relevance.  
-This repository contains the experiments for learning predictive historical relevance from future information available only during training.
+## Fast verification
 
-## Overview
+```bash
+python scripts/verify_frozen_results.py
+```
 
-Our framework consists of two stages:
+The verifier checks the frozen CSVs and current paper-facing headline results, including the 24-condition retrieval benchmark, 120-condition downstream trust study, matched CRAFT/RAFT diagnostics, strong-base substitution, and PRR-B100 candidate-budget control.
 
-1. **Coarse candidate generation** using past-pattern similarity.
-2. **Predictive relevance reranking** using a lightweight residual MLP trained with privileged future supervision.
+## Main reproducibility path
 
-Future trajectories are used only during training to construct soft relevance targets.  
-At inference time, the reranker uses only past-observable information.
+See [`experiments/prr_long_horizon/README.md`](experiments/prr_long_horizon/README.md). The notebooks train the full PRR stacks, freeze evaluation manifests, compare PRR and Pearson on identical pairs, reproduce the PRR-Stat ablation, assemble the 120-condition fixed-trust control, and apply validation-only trust calibration.
 
-## Reproducibility
+Additional directories:
 
-The `experiments/` directory contains notebooks corresponding to the main
-experiments reported in the paper.
+- `experiments/prr_stat_diagnostics/`: fixed-support mechanism and ablation studies;
+- `experiments/backbone_provenance/`: forecasting-backbone provenance notebooks;
+- `results/`: frozen paper-facing CSVs and audit summaries;
+- `scripts/prr_core.py`: compact implementation of the final PRR encoder/reranker architecture.
 
-The recommended execution order and the purpose of each notebook are described
-in [`experiments/README.md`](experiments/README.md).
+Large datasets, checkpoints, prediction caches, and per-query retrieval arrays are intentionally omitted because they are generated artifacts. Full details of the execution contract and artifact layout are in [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md).
 
-The final strong-forecaster experiments are listed separately in
-[`experiments/downstream/README.md`](experiments/downstream/README.md). Only
-the final execution path is retained; exploratory and superseded notebooks are
-excluded from the public release. See [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)
-for frozen-result verification and full-rerun requirements.
-
-Intermediate caches, checkpoints, and generated files are stored under `_work/`
-and are excluded from version control.
-
-## Repository Structure
+## Repository structure
 
 ```text
 which-histories-matter/
 ├── README.md
-├── LICENSE
+├── REPRODUCIBILITY.md
 ├── requirements.txt
 ├── data/
-│   └── README.md
 ├── experiments/
-│   ├── confirmatory/
-│   ├── mechanism/
-│   ├── supervision_ablation/
-│   ├── similarity_robustness/
-│   ├── candidate_pool/
-│   ├── saraf_matched/
-│   ├── finance/
-│   └── downstream/
-├── scripts/
-│   ├── audit_public_release.py
-│   └── verify_frozen_results.py
-└── results/
+│   ├── prr_long_horizon/
+│   ├── prr_stat_diagnostics/
+│   └── backbone_provenance/
+├── results/
+└── scripts/
+    ├── prr_core.py
+    └── verify_frozen_results.py
+```
+
+## Authors
+
+Yong-Hoon Choi, Kwang-Hyun Park, and Youngjin Cho  
+Division of Robotics, Kwangwoon University, Seoul, Republic of Korea.
