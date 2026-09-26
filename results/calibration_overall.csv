@@ -1,0 +1,3 @@
+scheme,W,T,L,mean_gain_pct,median_gain_pct,non_degraded
+Fixed-beta0.1,79,0,41,0.9711588623783135,0.79150547790657,79
+Condition-Cal,79,15,26,1.406602201943301,0.45897989068337963,94

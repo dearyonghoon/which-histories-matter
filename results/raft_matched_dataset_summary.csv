@@ -1,0 +1,7 @@
+dataset,conditions,selected_g_counts,mean_multiscale_union,MS_vs_Pearson_W,MS_vs_Pearson_T,MS_vs_Pearson_L,MS_vs_Pearson_mean_pct,MS_vs_L2_W,MS_vs_L2_T,...,ValScale_vs_Pearson_L,ValScale_vs_Pearson_mean_pct,ValScale_vs_L2_W,ValScale_vs_L2_T,ValScale_vs_L2_L,ValScale_vs_L2_mean_pct,ValScale_vs_PRR_W,ValScale_vs_PRR_T,ValScale_vs_PRR_L,ValScale_vs_PRR_mean_pct
+ETTh1,4,"{""1"": 4}",32.05514,4,0,0,11.797667,0,0,...,0,12.163767,0,0,4,-22.544064,0,0,4,-26.454737
+Electricity,4,"{""2"": 4}",29.251605,0,0,4,-2.520731,0,0,...,4,-2.630699,0,0,4,-67.091243,0,0,4,-63.910202
+Exchange,4,"{""1"": 4}",24.147313,4,0,0,6.648412,2,0,...,0,6.596583,2,0,2,-2.410435,2,0,2,-1.389487
+Solar,4,"{""4"": 4}",22.693132,0,0,4,-2.50426,0,0,...,3,-1.670809,0,0,4,-20.471192,0,0,4,-14.827109
+Traffic,4,"{""1"": 4}",27.936719,1,0,3,-1.414847,0,0,...,2,0.066588,0,0,4,-41.758149,0,0,4,-33.309871
+Weather,4,"{""1"": 3, ""2"": 1}",30.41344,4,0,0,33.41632,2,0,...,0,32.902794,2,0,2,-10.985535,0,0,4,-35.429703

@@ -1,0 +1,6 @@
+backbone,W,T,L,mean_gain_pct,median_gain_pct,mean_selected_beta,beta0_conditions
+PatchTST,15,3,6,-0.074759,0.105635,0.114583,3
+iTransformer,17,2,5,1.777262,0.532877,0.134375,2
+TimeMixer,16,3,5,0.483355,0.217095,0.115625,3
+SegMoE,11,6,7,1.55602,0.0,0.128125,6
+DLinear,20,1,3,3.291133,2.183094,0.144792,1

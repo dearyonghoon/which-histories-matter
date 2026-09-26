@@ -1,0 +1,8 @@
+dataset,l2_gain_vs_pearson_pct,prr_wins_vs_l2,prr_conditions,mean_prr_gain_vs_l2_pct
+ETTh1,28.204736,2,4,2.696560
+Weather,37.100185,2,4,15.963096
+Electricity,38.553830,1,4,-2.008404
+Traffic,29.431385,0,4,-6.388221
+Exchange,8.673109,2,4,-2.689359
+Solar,15.554136,0,4,-4.929817
+Overall,26.252897,7,24,0.440643

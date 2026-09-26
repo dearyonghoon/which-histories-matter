@@ -1,0 +1,7 @@
+quantity,full_prr,prr_budget100
+pearson_branch,100.0,50.0
+embedding_branch,100.0,50.0
+mean_union_size,183.0,94.93
+mean_learned_only,83.0,44.93
+mean_overlap,17.0,5.07
+final_top_k,10.0,10.0

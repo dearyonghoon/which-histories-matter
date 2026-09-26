@@ -1,0 +1,4 @@
+comparison,W,T,L,mean_gain_pct,median_gain_pct
+A-PRR vs Anchored L2,6,0,18,1.6337409166666668,-2.3854935
+A-PRR vs current PRR,19,0,5,0.8396668333333333,1.374056
+A-PRR vs Pearson,24,0,0,27.51214899720451,27.93239294828281
