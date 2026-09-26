@@ -1,0 +1,7 @@
+dataset,W,T,L,mean_gain_pct,median_gain_pct,mean_selected_beta,beta0_conditions
+ETTh1,5,1,14,-0.750437,-0.434839,0.1675,1
+Weather,20,0,0,2.385351,1.492853,0.2,0
+Electricity,16,2,2,0.397193,0.292134,0.04375,2
+Traffic,11,6,3,0.511756,0.076828,0.0475,6
+Exchange,7,6,7,0.349351,0.0,0.11875,6
+Solar,20,0,0,5.546399,5.274423,0.1875,0

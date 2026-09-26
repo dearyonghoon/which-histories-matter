@@ -1,0 +1,13 @@
+scope,comparison,W,T,L,mean_gain_pct,median_gain_pct
+CRAFT-paper overlap / 16,CRAFT-SC@10 vs Pearson,4,0,12,-4.267919,-5.400225
+CRAFT-paper overlap / 16,CRAFT-SC@10 vs Anchored L2,1,0,15,-57.941611,-65.843923
+CRAFT-paper overlap / 16,CRAFT-SC@10 vs PRR,0,0,16,-62.230699,-66.179537
+CRAFT-paper overlap / 16,CRAFT-Graph@10 vs Pearson,11,0,5,1.83746,1.333802
+CRAFT-paper overlap / 16,CRAFT-Graph@10 vs Anchored L2,1,0,15,-48.072852,-56.421955
+CRAFT-paper overlap / 16,CRAFT-Graph@10 vs PRR,0,0,16,-52.592685,-57.169608
+All six datasets / 24,CRAFT-SC@10 vs Pearson,8,0,16,-2.459367,-4.548833
+All six datasets / 24,CRAFT-SC@10 vs Anchored L2,1,0,23,-42.78816,-42.851355
+All six datasets / 24,CRAFT-SC@10 vs PRR,0,0,24,-44.45633,-54.930842
+All six datasets / 24,CRAFT-Graph@10 vs Pearson,16,0,8,2.510636,1.875227
+All six datasets / 24,CRAFT-Graph@10 vs Anchored L2,2,0,22,-35.205322,-31.887233
+All six datasets / 24,CRAFT-Graph@10 vs PRR,6,0,18,-37.06535,-41.738455

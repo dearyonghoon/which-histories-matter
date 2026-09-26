@@ -1,66 +1,20 @@
 # Experiments
 
-Public reproducibility notebooks for **Which Histories Matter? Predictive Relevance from Privileged Futures**.
+The supplementary package separates the current main method from fixed-support diagnostic experiments.
+
+- `prr_long_horizon/`: final PRR evaluation, exact Pearson baseline, strong deterministic/external retrieval diagnostics (anchored L2, Anchored-PRR, matched CRAFT, and matched RAFT), the PRR-B100 inference control, 120-condition downstream integration, and validation-only trust calibration.
+- `prr_stat_diagnostics/`: fixed-Pearson-support PRR-Stat mechanism controls, supervision ablations, similarity robustness, candidate-pool diagnostics, and SARAF-Matched checks. These are ablations/diagnostics, not a second main method.
+- `backbone_provenance/`: notebooks used to reproduce or audit frozen PatchTST, iTransformer, TimeMixer, Seg-MoE, and DLinear forecasts and related downstream arrays.
 
 ## Path configuration
 
-Notebooks locate the repository root automatically. By default:
-
-- benchmark datasets: `data/`
-- generated caches, checkpoints, and large intermediate outputs: `_work/`
-
-You can override these locations without editing the notebooks:
+For the current main notebooks, set:
 
 ```bash
-export WHM_DATA_ROOT=/path/to/datasets
-export WHM_WORK_ROOT=/path/to/workdir
+export PRR_ROOT=/path/to/which-histories-matter
+export PRR_DATA_ROOT=/path/to/datasets   # optional if using data/ layout
 ```
 
-`_work/` should be excluded from Git. Add the following line to the root `.gitignore`:
+Some historical diagnostic notebooks retain legacy internal names such as `Ours`, `PR-Stat`, or `PR-Hybrid` solely to preserve correspondence with frozen intermediate artifacts. In the current manuscript, PRR is the only main method and PRR-Stat is a restricted ablation; see `prr_stat_diagnostics/README.md`.
 
-```text
-_work/
-```
-
-## Generic benchmark workflow
-
-Mechanism diagnostics:
-
-```text
-mechanism/00_cross_domain_base.ipynb
-    -> mechanism/01_etth1_weather_relevance.ipynb
-    -> mechanism/02_candidate_prior.ipynb
-```
-
-Final confirmatory pipeline:
-
-```text
-confirmatory/confirmatory_benchmark.ipynb
-    -> saraf_matched/saraf_matched_protocol.ipynb
-    -> supervision_ablation/supervision_feature_ablation.ipynb
-    -> similarity_robustness/similarity_robustness.ipynb
-    -> candidate_pool/candidate_pool_coverage.ipynb
-```
-
-The similarity-robustness notebook reads the SARAF-Matched outputs, so run the SARAF notebook first. The candidate-pool notebook reuses confirmatory caches and similarity-analysis outputs.
-
-## Financial case study
-
-```text
-finance/01_data_preparation.ipynb
-    -> finance/02_crossstock_ablation.ipynb
-    -> finance/03_multihorizon.ipynb
-    -> finance/04_direct_baselines.ipynb
-```
-
-The last finance notebook additionally imports DLinear, PatchTST, and iTransformer from Time-Series-Library. Either clone it to `external/Time-Series-Library` or set:
-
-```bash
-export TSL_ROOT=/path/to/Time-Series-Library
-```
-
-For optional native SARAF checks, clone SARAF to `external/SARAF` or set `SARAF_REPO`.
-
-## Notes
-
-The public notebooks intentionally contain no saved execution outputs. Compact paper-result CSVs can be kept separately under the repository's `results/` directory.
+Large generated checkpoints/caches should live under the working root and are excluded from the supplementary zip.

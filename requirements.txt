@@ -5,5 +5,4 @@ torch
 tqdm
 jupyter
 matplotlib
-yfinance
 requests
